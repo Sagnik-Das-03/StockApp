@@ -7,8 +7,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
-import com.test.stockmarketapp.ui.theme.StockMarketAppTheme
 
+import com.test.stockmarketapp.ui.theme.StockMarketAppTheme
+import com.ramcosta.composedestinations.DestinationsNavHost
+import com.test.stockmarketapp.presentation.NavGraphs
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,7 +23,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-
+                    DestinationsNavHost(navGraph = NavGraphs.root)
                 }
             }
         }
